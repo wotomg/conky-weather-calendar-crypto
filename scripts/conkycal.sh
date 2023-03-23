@@ -1,12 +1,8 @@
 #!/bin/bash
 
-#Day of month
-DOM=`date +%_d`
-#Day of week
-DOW=`date +%a | head -c 2`
-#Conky default text color
-DC="\$color"
-#Selection color
-SC='${color0}'
+DayOfMonth=`date +%_d`
+DayOfWeek=`date +%a | head -c 2`
+DefaultColor="\$color"
+SelectingColor='${color0}'
 
-cal | sed s/"$DOW"/"$SC$DOW$DC"/ | sed s/"\(^\|[^0-9]\)$DOM"'\b'/"\1$SC$DOM$DC"/
+cal | sed s/"$DayOfWeek"/"$SelectingColor$DayOfWeek$DefaultColor"/ | sed s/"\(^\|[^0-9]\)$DayOfMonth"'\b'/"\1$SelectingColor$DayOfMonth$DefaultColor"/
